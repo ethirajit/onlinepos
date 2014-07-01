@@ -1,0 +1,24 @@
+Metadata-Version: 1.1
+Name: lfs-theme
+Version: 0.9.0a1
+Summary: The default theme for LFS
+Home-page: http://www.getlfs.com
+Author: Kai Diefenbach
+Author-email: kai.diefenbach@iqpp.de
+License: BSD
+Description: What is it?
+        ===========
+        
+        This is the default theme for `LFS`_, an online shop based on Django.
+        
+        See `LFS`_ for more information.
+        
+        .. _`LFS`: http://pypi.python.org/pypi/django-lfs
+        
+Keywords: django e-commerce online-shop
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python

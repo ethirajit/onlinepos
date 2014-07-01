@@ -1,0 +1,15 @@
+MANIFEST.in
+README.txt
+setup.cfg
+setup.py
+lfs_contact/__init__.py
+lfs_contact/forms.py
+lfs_contact/urls.py
+lfs_contact/utils.py
+lfs_contact/views.py
+lfs_contact.egg-info/PKG-INFO
+lfs_contact.egg-info/SOURCES.txt
+lfs_contact.egg-info/dependency_links.txt
+lfs_contact.egg-info/not-zip-safe
+lfs_contact.egg-info/requires.txt
+lfs_contact.egg-info/top_level.txt

@@ -1,0 +1,38 @@
+Metadata-Version: 1.1
+Name: django-paypal
+Version: 0.1.2.lfs-1
+Summary: A pluggable Django application for integrating PayPal Payments Standard or Payments Pro
+Home-page: https://github.com/spookylukey/django-paypal
+Author: Luke Plant
+Author-email: L.Plant.98@cantab.net
+License: UNKNOWN
+Description: A pluggable Django application for integrating PayPal Payments Standard or Payments Pro
+        
+        Docs: https://github.com/spookylukey/django-paypal
+        
+        Change log
+        ==========
+        
+        Version 0.1.3
+        -------------
+        
+        * Missing payment types added
+        
+        * Additional signals:
+        
+          * payment_was_refunded
+          * payment_was_reversed
+        
+        * Django 1.6 compatibility
+        
+        * Various bug fixes, including:
+        
+          * Fixes for non-ASCII characters
+        
+Platform: UNKNOWN
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development
+Classifier: Programming Language :: Python :: 2.7

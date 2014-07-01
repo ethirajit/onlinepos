@@ -1,0 +1,14 @@
+MANIFEST.in
+README.txt
+setup.cfg
+setup.py
+lfs_paypal/__init__.py
+lfs_paypal/listeners.py
+lfs_paypal/models.py
+lfs_paypal/tests.py
+lfs_paypal.egg-info/PKG-INFO
+lfs_paypal.egg-info/SOURCES.txt
+lfs_paypal.egg-info/dependency_links.txt
+lfs_paypal.egg-info/not-zip-safe
+lfs_paypal.egg-info/requires.txt
+lfs_paypal.egg-info/top_level.txt

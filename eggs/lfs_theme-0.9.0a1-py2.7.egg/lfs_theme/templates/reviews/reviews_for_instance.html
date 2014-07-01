@@ -1,0 +1,50 @@
+{% load i18n lfs_tags %}
+
+<div class="reviews">
+    <h1 class="section">{% trans 'Reviews' %}</h1>
+
+    {% if reviews %}
+        {% for review in reviews %}
+            <div class="review-wrapper" itemprop="review" itemscope itemtype="http://schema.org/Review">
+                <div class="review">
+                    <ul class="star-rating small-star inline-rating">
+                        <li class="current-rating"
+                            style="width:{{review.score|multiply:10}}px">
+                            <meta itemprop="worstRating" content = "1"/>
+                            {% blocktrans with avg=review.score|floatformat %}Currently <span itemprop="ratingValue">{{ avg }}</span>/<span itemprop="bestRating">5</span> stars{% endblocktrans %}
+                        </li>
+                    </ul>
+
+                    {% if review.email and review.name %}
+                        <meta itemprop="author" content="{{ review.email }}">
+                        <a href="mailto:{{review.email}}" itemprop="name">{{review.name}}</a>,
+                    {% else %}
+                        {% if review.name %}
+                            <span itemprop="name">{{ review.name }}</span>,
+                        {% else %}
+                            <span itemprop="author">{% trans 'Anonymous' %}</span>,
+                        {% endif %}
+                    {% endif %}
+                    <span itemprop="datePublished" content="{{ review.creation_date|date:"Y-m-d" }}">{{ review.creation_date|date:"d. F Y" }}</span>
+                </div>
+                <div itemprop="description">
+                    {{ review.comment|linebreaks }}
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>
+            {% trans 'There are no ratings for this product. Be the first one!' %}
+        </p>
+    {% endif %}
+    {% if has_rated %}
+        <div>
+            {% trans 'You have already rated' %}
+        </div>
+    {% else %}
+        <div class="buttons">
+            <a class="button left"
+               href="{% url 'reviews_add' content_type_id content_id %}">{% trans 'Add review' %}</a>
+        </div>
+    {% endif %}
+</div>

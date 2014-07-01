@@ -1,0 +1,48 @@
+{% extends "lfs/base.html" %}
+{% load i18n lfs_tags lfs_theme_tags reviews_tags %}
+
+{% block title %}
+    {{ product.get_meta_title }} - {{ block.super }}
+{% endblock %}
+
+{% block section %}product{% endblock %}
+
+{% block head %}
+    {% if product.get_meta_keywords %}
+        <meta name="keywords" content="{{ product.get_meta_keywords }}" />
+    {% endif %}
+    {% if product.get_meta_description %}
+        <meta name="description" content="{{ product.get_meta_description }}" />
+    {% endif %}
+    {% if product.parent.is_product_with_variants %}
+        <link rel="canonical" href="{{ variant_canonical.get_absolute_url }}">
+    {% endif %}
+{% endblock %}
+
+{% block breadcrumbs %}
+    {% breadcrumbs product %}
+{% endblock %}
+
+{% block content %}
+    {{ product.static_block.html|safe }}
+    {% product_navigation product %}
+    <div class="overview">
+        {% come_from_page product %}
+        <a href="{{ come_from_page.get_absolute_url }}">
+            {% trans 'Back to overview' %}
+        </a>
+    </div>
+    <div itemscope itemtype="http://schema.org/Product">
+        <div id="product-form-wrapper">
+            <form id="product-form"
+                  action="{% url 'lfs_product_dispatcher' %}"
+                  data="{% url 'lfs_select_variant_from_properties' %}"
+                  method="post">
+                {% csrf_token %}
+                {{ product_inline|safe }}
+            </form>
+        </div>
+        <a name="reviews"></a>
+        {% reviews_for_instance product %}
+    </div>
+{% endblock %}

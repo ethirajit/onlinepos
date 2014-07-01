@@ -1,0 +1,3 @@
+setuptools
+django-countries
+django-piston

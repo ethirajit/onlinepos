@@ -1,0 +1,28 @@
+Metadata-Version: 1.1
+Name: lfs-contact
+Version: 1.1
+Summary: A simple contact form for LFS
+Home-page: http://www.getlfs.com
+Author: Kai Diefenbach
+Author-email: kai.diefenbach@iqpp.de
+License: BSD
+Description: What is it?
+        ===========
+        
+        LFS Contact is a simple contact form for LFS.
+        
+        1.1
+        ===
+        * Django 1.6 support
+        
+        1.0
+        ===
+        * Initial Release
+        
+Keywords: django e-commerce online-shop
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python

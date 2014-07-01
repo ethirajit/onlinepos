@@ -1,0 +1,39 @@
+[Fri Jun 27 12:09:00 2014] [error] [client 203.197.160.37] mod_wsgi (pid=2612): Exception occurred processing WSGI script '/home/onlinepos_django-lfs/lfs_project/apache/onlinepos.wsgi'.
+[Fri Jun 27 12:09:00 2014] [error] [client 203.197.160.37] Traceback (most recent call last):
+[Fri Jun 27 12:09:00 2014] [error] [client 203.197.160.37]   File "/home/onlinepos_django-lfs/eggs/Django-1.6.5-py2.7.egg/django/core/handlers/wsgi.py", line 187, in __call__
+[Fri Jun 27 12:09:00 2014] [error] [client 203.197.160.37]     self.load_middleware()
+[Fri Jun 27 12:09:00 2014] [error] [client 203.197.160.37]   File "/home/onlinepos_django-lfs/eggs/Django-1.6.5-py2.7.egg/django/core/handlers/base.py", line 44, in load_middleware
+[Fri Jun 27 12:09:00 2014] [error] [client 203.197.160.37]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Fri Jun 27 12:09:00 2014] [error] [client 203.197.160.37]   File "/home/onlinepos_django-lfs/eggs/Django-1.6.5-py2.7.egg/django/conf/__init__.py", line 54, in __getattr__
+[Fri Jun 27 12:09:00 2014] [error] [client 203.197.160.37]     self._setup(name)
+[Fri Jun 27 12:09:00 2014] [error] [client 203.197.160.37]   File "/home/onlinepos_django-lfs/eggs/Django-1.6.5-py2.7.egg/django/conf/__init__.py", line 50, in _setup
+[Fri Jun 27 12:09:00 2014] [error] [client 203.197.160.37]     self._configure_logging()
+[Fri Jun 27 12:09:00 2014] [error] [client 203.197.160.37]   File "/home/onlinepos_django-lfs/eggs/Django-1.6.5-py2.7.egg/django/conf/__init__.py", line 80, in _configure_logging
+[Fri Jun 27 12:09:00 2014] [error] [client 203.197.160.37]     logging_config_func(self.LOGGING)
+[Fri Jun 27 12:09:00 2014] [error] [client 203.197.160.37]   File "/usr/lib/python2.7/logging/config.py", line 797, in dictConfig
+[Fri Jun 27 12:09:00 2014] [error] [client 203.197.160.37]     dictConfigClass(config).configure()
+[Fri Jun 27 12:09:00 2014] [error] [client 203.197.160.37]   File "/usr/lib/python2.7/logging/config.py", line 579, in configure
+[Fri Jun 27 12:09:00 2014] [error] [client 203.197.160.37]     '%r: %s' % (name, e))
+[Fri Jun 27 12:09:00 2014] [error] [client 203.197.160.37] ValueError: Unable to configure handler 'logfile': [Errno 13] Permission denied: '/home/onlinepos_django-lfs/lfs.log'
+[Fri Jun 27 12:09:03 2014] [error] No handlers could be found for logger "default"
+[Fri Jun 27 12:20:46 2014] [error] /home/onlinepos_django-lfs/eggs/Django-1.6.5-py2.7.egg/django/http/response.py:327: DeprecationWarning: Using mimetype keyword argument is deprecated, use content_type instead
+[Fri Jun 27 12:20:46 2014] [error]   super(HttpResponse, self).__init__(*args, **kwargs)
+[Fri Jun 27 12:20:46 2014] [error] 
+[Sun Jun 29 15:04:31 2014] [error] [client 66.249.81.127] mod_wsgi (pid=11156): Exception occurred processing WSGI script '/home/onlinepos_django-lfs/lfs_project/apache/onlinepos.wsgi'.
+[Sun Jun 29 15:04:31 2014] [error] [client 66.249.81.127] Traceback (most recent call last):
+[Sun Jun 29 15:04:31 2014] [error] [client 66.249.81.127]   File "/home/onlinepos_django-lfs/eggs/Django-1.6.5-py2.7.egg/django/core/handlers/wsgi.py", line 187, in __call__
+[Sun Jun 29 15:04:31 2014] [error] [client 66.249.81.127]     self.load_middleware()
+[Sun Jun 29 15:04:31 2014] [error] [client 66.249.81.127]   File "/home/onlinepos_django-lfs/eggs/Django-1.6.5-py2.7.egg/django/core/handlers/base.py", line 44, in load_middleware
+[Sun Jun 29 15:04:31 2014] [error] [client 66.249.81.127]     for middleware_path in settings.MIDDLEWARE_CLASSES:
+[Sun Jun 29 15:04:31 2014] [error] [client 66.249.81.127]   File "/home/onlinepos_django-lfs/eggs/Django-1.6.5-py2.7.egg/django/conf/__init__.py", line 54, in __getattr__
+[Sun Jun 29 15:04:31 2014] [error] [client 66.249.81.127]     self._setup(name)
+[Sun Jun 29 15:04:31 2014] [error] [client 66.249.81.127]   File "/home/onlinepos_django-lfs/eggs/Django-1.6.5-py2.7.egg/django/conf/__init__.py", line 50, in _setup
+[Sun Jun 29 15:04:31 2014] [error] [client 66.249.81.127]     self._configure_logging()
+[Sun Jun 29 15:04:31 2014] [error] [client 66.249.81.127]   File "/home/onlinepos_django-lfs/eggs/Django-1.6.5-py2.7.egg/django/conf/__init__.py", line 80, in _configure_logging
+[Sun Jun 29 15:04:31 2014] [error] [client 66.249.81.127]     logging_config_func(self.LOGGING)
+[Sun Jun 29 15:04:31 2014] [error] [client 66.249.81.127]   File "/usr/lib/python2.7/logging/config.py", line 797, in dictConfig
+[Sun Jun 29 15:04:31 2014] [error] [client 66.249.81.127]     dictConfigClass(config).configure()
+[Sun Jun 29 15:04:31 2014] [error] [client 66.249.81.127]   File "/usr/lib/python2.7/logging/config.py", line 579, in configure
+[Sun Jun 29 15:04:31 2014] [error] [client 66.249.81.127]     '%r: %s' % (name, e))
+[Sun Jun 29 15:04:31 2014] [error] [client 66.249.81.127] ValueError: Unable to configure handler 'logfile': [Errno 13] Permission denied: '/home/onlinepos_django-lfs/lfs.log'
+[Mon Jun 30 04:15:27 2014] [error] No handlers could be found for logger "default"

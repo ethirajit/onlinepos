@@ -1,0 +1,21 @@
+{% load i18n %}
+<ul class="breadcrumbs" itemscope itemtype="http://schema.org/WebPage">
+    <li class="breadcrumbs-label">{% trans 'You are here:' %}</li>
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+        <a href="{% url 'lfs_shop_view' %}" itemprop="url">
+            <span itemprop="title">{% trans 'Home' %}</span>
+        </a>
+    </li>
+    {% for object in objects %}
+        <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+            &gt;
+            {% if forloop.last %}
+                <span itemprop="title">{{ object.name }}</span>
+            {% else %}
+                <a href="{{ object.url }}" itemprop="url">
+                    <span itemprop="title">{{ object.name }}</span>
+                </a>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
