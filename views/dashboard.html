@@ -1,4 +1,15 @@
-﻿<div class="page page-dashboard" data-ng-controller="DashboardCtrl" style="overflow-y: auto;">
+﻿<script>
+	$(document).ready(function(){
+		//Begin - Change the Checkbox status to checked, when add button clicked
+		$(".add-to-cart").click(function(){
+			var add = $(this).attr('value');
+			$("#" + add).prop('checked', true);
+		});
+		//End - Change the Checkbox status to checked, when add button clicked
+	});
+</script>
+
+<div class="page page-dashboard" data-ng-controller="DashboardCtrl" style="overflow-y: auto;">
     <div class="row">
         <div class="col-md-8" >
             <section class="panel panel-default mail-container">
@@ -9,29 +20,29 @@
 						<p>Napoli sauce, cheese, calabrese pork sausage, green olives and mushroom.</p>
 						<table class="table table-hover">
 							<tr>
-								<td><label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ><span></span></label>Regular</i></td>
+								<td><label class="ui-checkbox"><input name="checkbox1" type="checkbox" id="dishid1"><span></span></label>Regular</i></td>
 								<td>$9.00</td>
 								<td><button type="button" class="btn btn-success btn-xs">Customize</button></td>
-								<td><button type="button" class="btn btn-success btn-xs">Add</button></td>
+								<td><button type="button" class="btn btn-success btn-xs add-to-cart" value="dishid1">Add</button></td>
 							</tr>
 
 							<tr>
-								<td><label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ><span></span></label>Large</i></td>
+								<td><label class="ui-checkbox"><input name="checkbox2" type="checkbox" id="dishid2"><span></span></label>Large</i></td>
 								<td>$15.00</td>
 								<td><button type="button" class="btn btn-success btn-xs">Customize</button></td>
-								<td><button type="button" class="btn btn-success btn-xs">Add</button></td>
+								<td><button type="button" class="btn btn-success btn-xs add-to-cart" value="dishid2">Add</button></td>
 							</tr>
 							<tr>
-								<td><label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ><span></span></label>Family</i></td>
+								<td><label class="ui-checkbox"><input name="checkbox3" type="checkbox" id="dishid3"><span></span></label>Family</i></td>
 								<td>$20.00</td>
 								<td><button type="button" class="btn btn-success btn-xs">Customize</button></td>
-								<td><button type="button" class="btn btn-success btn-xs">Add</button></td>
+								<td><button type="button" class="btn btn-success btn-xs add-to-cart" value="dishid3">Add</button></td>
 							</tr>
 							<tr>
-								<td><label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ><span></span></label>Part</i></td>
+								<td><label class="ui-checkbox"><input name="checkbox4" type="checkbox" id="dishid4"><span></span></label>Part</i></td>
 								<td>$40.00</td>
 								<td><button type="button" class="btn btn-success btn-xs">Customize</button></td>
-								<td><button type="button" class="btn btn-success btn-xs">Add</button></td>
+								<td><button type="button" class="btn btn-success btn-xs add-to-cart" value="dishid4">Add</button></td>
 							</tr>
 						</table>
 					</div>
@@ -40,26 +51,26 @@
 						<p>Napoli sauce, cheese, spinach, ricotta, sliced tomato and green olives.</p>
 						<table class="table table-hover">
 							<tr>
-								<td><label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ><span></span></label>Regular</i></td>
+								<td><label class="ui-checkbox"><input name="checkbox5" type="checkbox" value="option1" ><span></span></label>Regular</i></td>
 								<td>$9.00</td>
 								<td><button type="button" class="btn btn-success btn-xs">Customize</button></td>
 								<td><button type="button" class="btn btn-success btn-xs">Add</button></td>
 							</tr>
 
 							<tr>
-								<td><label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ><span></span></label>Large</i></td>
+								<td><label class="ui-checkbox"><input name="checkbox6" type="checkbox" value="option1" ><span></span></label>Large</i></td>
 								<td>$15.00</td>
 								<td><button type="button" class="btn btn-success btn-xs">Customize</button></td>
 								<td><button type="button" class="btn btn-success btn-xs">Add</button></td>
 							</tr>
 							<tr>
-								<td><label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ><span></span></label>Family</i></td>
+								<td><label class="ui-checkbox"><input name="checkbox7" type="checkbox" value="option1" ><span></span></label>Family</i></td>
 								<td>$20.00</td>
 								<td><button type="button" class="btn btn-success btn-xs">Customize</button></td>
 								<td><button type="button" class="btn btn-success btn-xs">Add</button></td>
 							</tr>
 							<tr>
-								<td><label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ><span></span></label>Part</i></td>
+								<td><label class="ui-checkbox"><input name="checkbox8" type="checkbox" value="option1" ><span></span></label>Part</i></td>
 								<td>$40.00</td>
 								<td><button type="button" class="btn btn-success btn-xs">Customize</button></td>
 								<td><button type="button" class="btn btn-success btn-xs">Add</button></td>
@@ -71,26 +82,26 @@
 						<p>Napoli sauce, cheese, bolognaise, parmesan.</p>
 						<table class="table table-hover">
 							<tr>
-								<td><label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ><span></span></label>Regular</i></td>
+								<td><label class="ui-checkbox"><input name="checkbox9" type="checkbox" value="option1" ><span></span></label>Regular</i></td>
 								<td>$9.00</td>
 								<td><button type="button" class="btn btn-success btn-xs">Customize</button></td>
 								<td><button type="button" class="btn btn-success btn-xs">Add</button></td>
 							</tr>
 
 							<tr>
-								<td><label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ><span></span></label>Large</i></td>
+								<td><label class="ui-checkbox"><input name="checkbox10" type="checkbox" value="option1" ><span></span></label>Large</i></td>
 								<td>$15.00</td>
 								<td><button type="button" class="btn btn-success btn-xs">Customize</button></td>
 								<td><button type="button" class="btn btn-success btn-xs">Add</button></td>
 							</tr>
 							<tr>
-								<td><label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ><span></span></label>Family</i></td>
+								<td><label class="ui-checkbox"><input name="checkbox11" type="checkbox" value="option1" ><span></span></label>Family</i></td>
 								<td>$20.00</td>
 								<td><button type="button" class="btn btn-success btn-xs">Customize</button></td>
 								<td><button type="button" class="btn btn-success btn-xs">Add</button></td>
 							</tr>
 							<tr>
-								<td><label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ><span></span></label>Part</i></td>
+								<td><label class="ui-checkbox"><input name="checkbox12" type="checkbox" value="option1" ><span></span></label>Part</i></td>
 								<td>$40.00</td>
 								<td><button type="button" class="btn btn-success btn-xs">Customize</button></td>
 								<td><button type="button" class="btn btn-success btn-xs">Add</button></td>
@@ -102,26 +113,26 @@
 						<p>Napoli sauce, cheese, pumpkin, potato, peppers and onion.</p>
 						<table class="table table-hover">
 							<tr>
-								<td><label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ><span></span></label>Regular</i></td>
+								<td><label class="ui-checkbox"><input name="checkbox13" type="checkbox" value="option1" ><span></span></label>Regular</i></td>
 								<td>$9.00</td>
 								<td><button type="button" class="btn btn-success btn-xs">Customize</button></td>
 								<td><button type="button" class="btn btn-success btn-xs">Add</button></td>
 							</tr>
 
 							<tr>
-								<td><label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ><span></span></label>Large</i></td>
+								<td><label class="ui-checkbox"><input name="checkbox14" type="checkbox" value="option1" ><span></span></label>Large</i></td>
 								<td>$15.00</td>
 								<td><button type="button" class="btn btn-success btn-xs">Customize</button></td>
 								<td><button type="button" class="btn btn-success btn-xs">Add</button></td>
 							</tr>
 							<tr>
-								<td><label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ><span></span></label>Family</i></td>
+								<td><label class="ui-checkbox"><input name="checkbox15" type="checkbox" value="option1" ><span></span></label>Family</i></td>
 								<td>$20.00</td>
 								<td><button type="button" class="btn btn-success btn-xs">Customize</button></td>
 								<td><button type="button" class="btn btn-success btn-xs">Add</button></td>
 							</tr>
 							<tr>
-								<td><label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ><span></span></label>Part</i></td>
+								<td><label class="ui-checkbox"><input name="checkbox16" type="checkbox" value="option1" ><span></span></label>Part</i></td>
 								<td>$40.00</td>
 								<td><button type="button" class="btn btn-success btn-xs">Customize</button></td>
 								<td><button type="button" class="btn btn-success btn-xs">Add</button></td>
@@ -137,7 +148,7 @@
                 <div class="panel-body" >
                   <Strong>Your Order is for:</Strong><br><br>
 				  <label class="ui-radio"><input name="radio1" type="radio" value="option1" checked><span>Home Delivery</span></label>
-                  <label class="ui-radio"><input name="radio1" type="radio" value="option2"><span>Self Pickup</span></label>
+                  <label class="ui-radio"><input name="radio2" type="radio" value="option2"><span>Self Pickup</span></label>
 				  <br><Strong>Delivery to:</Strong><br>
 				  <span class="ui-select-order">
 					<select>
