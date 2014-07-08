@@ -4,6 +4,7 @@
 		$(".add-to-cart").click(function(){
 			var add = $(this).attr('value');
 			$("#" + add).prop('checked', true);
+			$('#added-item-list tr:first').before('<tr><td class="text-danger">Item 1</td><td>$9.00</td>/tr>');
 		});
 		//End - Change the Checkbox status to checked, when add button clicked
 	});
@@ -166,15 +167,7 @@
 					</select>
 				  </span>
 				  <br><br><Strong>Item Selected</Strong><br>
-				  <table class="table table-hover">
-							<tr>
-								<td class="text-danger">Item 1</td>
-								<td>$9.00</td>
-							</tr>
-							<tr>
-								<td class="text-danger">tem 2</td>
-								<td>$20.00</td>
-							</tr>
+				  <table id="added-item-list"class="table table-hover">
 							<tr>
 								<td class="text-primary">Sub Total</td>
 								<td>$29.00</td>
