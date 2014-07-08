@@ -10244,3 +10244,19 @@ button.toast-close-button {
 .form-validation .ng-invalid.ng-dirty {
   border-color: #e94b3b;
 }
+
+
+/* Style.css for jquery.mCustomScrollbar*/
+.content{
+	overflow: auto;
+	position: relative;
+	padding: 0px;
+	background: #333;
+	margin: 0px;
+	/*height: 200px; set the height at run time*/
+	-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+}
+
+.content.light{
+	background-color: white;
+}
