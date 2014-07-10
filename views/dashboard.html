@@ -14,9 +14,7 @@
 			var add = $(this).attr('value');
 			$("#" + add).prop('checked', true);
 			//Add Item to YOUR ORDER panel
-			$('.added-item-list tr:first').before('<tr><td class="text-danger">Item 1</td><td>$9.00</td>/tr>');
-			//Set height of item to be listed in right panel
-			$(".content").height(maxRightPanelHeight-450);
+			$('#added-item-list tr:first').before('<tr><td class="text-danger">Item 1</td><td>$9.00</td>/tr>');
 		});
 		//End - Change the Checkbox status to checked & add items to YOUR ORDER panel, when add button clicked
 	});
@@ -159,38 +157,41 @@
             <div class="panel-right panel-default">
                 <div class="panel-heading"><strong><span class="glyphicon glyphicon-download-alt"></span>&nbsp;&nbsp;<span data-i18n=" Your Order"></span></strong></div>
                 <div class="panel-body" data-ng-controller="TabsDemoCtrl">
-                    <tabset justified="true" class="ui-tab">
-                        <tab heading="Home Delivery">
-							<Strong>Delivery to:</Strong><br>
-							<span class="ui-select-order">
-								<select>
-									<option>Mustard</option>
-									<option>Ketchup</option>
-									<option>Barbecue</option>
-								</select>
-							</span>
-							<br><Strong>Requested for:</Strong><br>
-							<span class="ui-select-order">
-								<select>
-									<option>Mustard</option>
-									<option>Ketchup</option>
-									<option>Barbecue</option>
-								</select>
-							</span>
+					<tabset justified="true" class="ui-tab">
+                        <tab heading="Home Delivery" select="alertHomeDeliver()">
+							 <div class="form-group">
+								<div data-ng-controller="TypeaheadCtrl">
+									<input type="text" 
+										ng-model="selected"
+										typeahead="state for state in states | filter:$viewValue | limitTo:8"
+										class="form-control"
+										placeholder="Deliver to:">
+								</div>
+							</div>
+							<div class="form-group">
+								<div data-ng-controller="TypeaheadCtrl">
+									<input type="text" 
+										ng-model="selected"
+										typeahead="state for state in states | filter:$viewValue | limitTo:8"
+										class="form-control"
+										placeholder="Requested for:">
+								</div>
+							</div>
 						</tab>
-                        <tab heading="Self Pickup">
-							<Strong>Requested for:</Strong><br>
-							<span class="ui-select-order">
-								<select>
-									<option>Mustard</option>
-									<option>Ketchup</option>
-									<option>Barbecue</option>
-								</select>
-							</span>
+                        <tab heading="Self Pickup" select="alertSelfPickup()">
+							<div class="form-group">
+								<div data-ng-controller="TypeaheadCtrl">
+									<input type="text" 
+										ng-model="selected"
+										typeahead="state for state in states | filter:$viewValue | limitTo:8"
+										class="form-control"
+										placeholder="Requested for:">
+								</div>
+							</div>
 						</tab>
                     </tabset>
 					<div id="content-rdsd" class="content light">
-						<table class="added-item-list table table-hover" style="left: 0;">
+						<table id="added-item-list" class="table table-hover" style="left: 0;">
 							<tr></tr>
 						</table>
 					</div>
