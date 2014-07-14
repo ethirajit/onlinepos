@@ -10260,3 +10260,8 @@ button.toast-close-button {
 .content.light{
 	background-color: white;
 }
+
+/* Hover for Extra-Ingredients*/
+.extras{
+	background: #e2e6ea;
+}

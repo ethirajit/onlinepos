@@ -15,8 +15,54 @@
 			$("#" + add).prop('checked', true);
 			//Add Item to YOUR ORDER panel
 			$('#added-item-list tr:first').before('<tr><td class="text-danger">Item 1</td><td>$9.00</td>/tr>');
+			
+			//Clear the contents in Custrom pop-up window
+			$('.extras-added').html("");
 		});
 		//End - Change the Checkbox status to checked & add items to YOUR ORDER panel, when add button clicked
+		
+		//Initially Basic price & Total Price will be same in the custom pop-up window
+		//Basic Price
+		var basicPrice = $('.basic-price').attr('basic-price');
+			basicPrice = parseFloat(basicPrice);
+		//total Price
+		var currentTotalAddedPrice = "$" + basicPrice + ".00";
+			$('.total-price-plus').html(currentTotalAddedPrice);
+				
+		//Begin - Change the price value based on Extra prices  & Basic Prices
+		$(".extras").click(function(){
+			var basicPrice = $('.basic-price').attr('basic-price');
+				basicPrice = parseFloat(basicPrice);
+			//Get total name of the selected extra items 
+			var totalExtraAddedItem = $('.extras-added').html();
+			//Get individual Name of the selected extra items
+			var currentExtraAddedItem = $(this).html();
+			//Get total price of the selected extra items 
+			var totalExtraAddedPrice = $('.extra-price-plus').attr('extra-price-plus');
+				totalExtraAddedPrice = parseFloat(totalExtraAddedPrice);
+			//Get individual price of the selected extra items 
+			var currentExtraAddedPrice = $(this).attr('price-plus');
+				currentExtraAddedPrice = parseFloat(currentExtraAddedPrice); 
+			//Get individual price of the selected extra items 
+			//check for click on extra items, except 1st click. 
+			if(totalExtraAddedItem != ""){
+				currentExtraAddedItem = totalExtraAddedItem + " , " + currentExtraAddedItem;
+			}
+			//Display Extra Item name in Custrom pop-up
+			$('.extras-added').html(currentExtraAddedItem);
+			
+			//Display total price of the selected extra items
+			var currentExtraAddedPrice = totalExtraAddedPrice+currentExtraAddedPrice;
+			var currentTotalAddedPrice = currentExtraAddedPrice+basicPrice;
+			$('.extra-price-plus').attr("extra-price-plus",currentExtraAddedPrice);
+			currentExtraAddedPrice = "$" + currentExtraAddedPrice + ".00";
+			$('.extra-price-plus').html(currentExtraAddedPrice);
+			
+			//Display total price of the selected extra items & Basic Prices of the item
+			currentTotalAddedPrice = "$" + currentTotalAddedPrice + ".00";
+			$('.total-price-plus').html(currentTotalAddedPrice);
+		});
+		//End - Change the price value based on Extra prices & Basic Prices
 	});
 </script>
 
@@ -206,12 +252,19 @@
                 <div class="panel-heading">
 					<table class="table table-hover">
 						<tr>
-							<td class="col-md-11">Regular</td>
-							<td class="col-md-1">$90.00</td>
+							<td class="col-md-1">Regular</td>
+							<td class="col-md-10"></td>
+							<td class="col-md-1 basic-price" basic-price="90.00">$90.00</td>
 						</tr>
 						<tr>
 							<td>Extras</td>
-							<td>$00.00</td>
+							<td class="extras-added"></td>
+							<td class="extra-price-plus" extra-price-plus="0.00">$00.00</td>
+						</tr>
+						<tr>
+							<td>Total</td>
+							<td></td>
+							<td class="total-price-plus" total-price-plus="0.00">$00.00</td>
 						</tr>
 					</table><br>
 					<button type="button" class="btn btn-success btn-xs md-close add-to-cart" value="dishid1">Add to Cart</button>
@@ -221,31 +274,63 @@
 					<div class="callout callout-info col-md-4">
 						<table class="table table-hover">
 							<tr>
-								<td class="col-md-11">Regular</td>
+								<td class="col-md-11 text-success extras" price-plus="9.00">Regular</td>
+								<td class="col-md-1">$9.00</td>
+							</tr>
+							<tr>
+								<td class="col-md-11 text-success extras" price-plus="1.00">Extras</td>
+								<td>$1.00</td>
+							</tr>
+							<tr>
+								<td class="col-md-11 text-success extras" price-plus="2.00">Regular</td>
+								<td>$2.00</td>
+							</tr>
+							<tr>
+								<td class="col-md-11 text-success extras" price-plus="1.00">Extras</td>
+								<td>$1.00</td>
+							</tr>
+							<tr>
+								<td class="col-md-11 text-success extras" price-plus="2.00">Extras</td>
+								<td>$2.00</td>
+							</tr>
+							<tr>
+								<td class="col-md-11 text-success extras" price-plus="4.00">Regular</td>
+								<td>$4.00</td>
+							</tr>
+							<tr>
+								<td class="col-md-11 text-success extras" price-plus="1.00">Extras</td>
+								<td>$1.00</td>
+							</tr>
+						</table>
+					</div>
+					<div class="callout callout-info col-md-4">
+						<table class="table table-hover">
+							<tr>
+								<td class="col-md-11 text-success extras">Regular</td>
 								<td class="col-md-1">$90.00</td>
 							</tr>
 							<tr>
-								<td>Extras</td>
+								<td class="col-md-11 text-success extras">Extras</td>
 								<td>$00.00</td>
 							</tr>
 							<tr>
-								<td>Regular</td>
+								<td class="col-md-11 text-success extras">Regular</td>
 								<td>$90.00</td>
 							</tr>
 							<tr>
-								<td>Extras</td>
+								<td class="col-md-11 text-success extras">Extras</td>
 								<td>$00.00</td>
 							</tr>
 							<tr>
-								<td>Extras</td>
+								<td class="col-md-11 text-success extras">Extras</td>
 								<td>$00.00</td>
 							</tr>
 							<tr>
-								<td>Regular</td>
+								<td class="col-md-11 text-success extras">Regular</td>
 								<td>$90.00</td>
 							</tr>
 							<tr>
-								<td>Extras</td>
+								<td class="col-md-11 text-success extras">Extras</td>
 								<td>$00.00</td>
 							</tr>
 						</table>
@@ -253,63 +338,31 @@
 					<div class="callout callout-info col-md-4">
 						<table class="table table-hover">
 							<tr>
-								<td class="col-md-11">Regular</td>
+								<td class="col-md-11 text-success extras">Regular</td>
 								<td class="col-md-1">$90.00</td>
 							</tr>
 							<tr>
-								<td>Extras</td>
+								<td class="col-md-11 text-success extras">Extras</td>
 								<td>$00.00</td>
 							</tr>
 							<tr>
-								<td>Regular</td>
+								<td class="col-md-11 text-success extras">Regular</td>
 								<td>$90.00</td>
 							</tr>
 							<tr>
-								<td>Extras</td>
+								<td class="col-md-11 text-success extras">Extras</td>
 								<td>$00.00</td>
 							</tr>
 							<tr>
-								<td>Extras</td>
+								<td class="col-md-11 text-success extras">Extras</td>
 								<td>$00.00</td>
 							</tr>
 							<tr>
-								<td>Regular</td>
+								<td class="col-md-11 text-success extras">Regular</td>
 								<td>$90.00</td>
 							</tr>
 							<tr>
-								<td>Extras</td>
-								<td>$00.00</td>
-							</tr>
-						</table>
-					</div>
-					<div class="callout callout-info col-md-4">
-						<table class="table table-hover">
-							<tr>
-								<td class="col-md-11">Regular</td>
-								<td class="col-md-1">$90.00</td>
-							</tr>
-							<tr>
-								<td>Extras</td>
-								<td>$00.00</td>
-							</tr>
-							<tr>
-								<td>Regular</td>
-								<td>$90.00</td>
-							</tr>
-							<tr>
-								<td>Extras</td>
-								<td>$00.00</td>
-							</tr>
-							<tr>
-								<td>Extras</td>
-								<td>$00.00</td>
-							</tr>
-							<tr>
-								<td>Regular</td>
-								<td>$90.00</td>
-							</tr>
-							<tr>
-								<td>Extras</td>
+								<td class="col-md-11 text-success extras">Extras</td>
 								<td>$00.00</td>
 							</tr>
 						</table>
