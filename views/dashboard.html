@@ -16,8 +16,17 @@
 			//Add Item to YOUR ORDER panel
 			$('#added-item-list tr:first').before('<tr><td class="text-danger">Item 1</td><td>$9.00</td>/tr>');
 			
-			//Clear the contents in Custrom pop-up window
+			//Begin - Clear the contents in Custrom pop-up window when add to cart buttons clicked
 			$('.extras-added').html("");
+			$('.extra-price-plus').html("$00.00");
+			//Initially Basic price & Total Price will be same in the custom pop-up window
+			//Basic Price
+			var basicPrice = $('.basic-price').attr('basic-price');
+			basicPrice = parseFloat(basicPrice);
+			//total Price
+			var currentTotalAddedPrice = "$" + basicPrice + ".00";
+			$('.total-price-plus').html(currentTotalAddedPrice);
+			//End - Clear the contents in Custrom pop-up window when add to cart buttons clicked
 		});
 		//End - Change the Checkbox status to checked & add items to YOUR ORDER panel, when add button clicked
 		
